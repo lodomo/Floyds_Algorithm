@@ -46,6 +46,9 @@ int main(int argc, char *argv[]) {
 
     free(raw_data);
     free(matrix);
+    if (temp) {
+        free(temp);
+    }
     return EXIT_SUCCESS;
 }
 
@@ -216,6 +219,10 @@ void floyds_algorithm(int **matrix) {
         for (int i = 0; i < matrix_size; ++i) {
             // j is the column
             for (int j = 0; j < matrix_size; ++j) {
+                if (i == j || i == k || j == k) {
+                    continue;
+                }
+
                 matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]);
 
                 if (show == 2) {
@@ -229,6 +236,8 @@ void floyds_algorithm(int **matrix) {
         }
     }
 }
+
+
 
 void copy_matrix(int **input, int **output) {
     for (int i = 0; i < matrix_size; i++) {
