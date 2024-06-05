@@ -20,7 +20,7 @@ CFLAGS = -Wall -Wextra -Wshadow -Wunreachable-code \
          -Wunsafe-loop-optimizations -Wuninitialized -Werror \
          -Wno-unused-parameter -Wno-string-compare -Wno-stringop-overflow \
          -Wno-stringop-overread -Wno-stringop-truncation
-DFLAGS = -g -DNOISY_DEBUG
+DFLAGS = -g
 LDFLAGS = # Add any linker flags here if needed
 TAR_FILE = ${PROGRAM}.tar.gz
 TEST_FILE = test-${PROGRAM}.bash
